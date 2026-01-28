@@ -248,6 +248,11 @@ function renderGrid() {
             if (x === start[0] && y === start[1]) cell.classList.add("start");
             if (x === goal[0] && y === goal[1]) cell.classList.add("goal");
 
+            // highlight movable neighbors
+            if (!isCleared && canMoveTo(x, y)) {
+                cell.classList.add("hint");
+            }
+
             const dot = document.createElement("div");
             dot.className = "dot";
             cell.appendChild(dot);
