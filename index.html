@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>One-Stroke Grid</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="titleRow">
+      <h1 class="title">One-Stroke Grid</h1>
+      <div class="meta">
+        <div id="stageLabel" class="badge">Stage</div>
+        <div id="progressLabel" class="badge">0/0</div>
+      </div>
+    </div>
+    <div class="subRow">
+      <div id="countLabel" class="subBadge">Visited: 0/0</div>
+      <div id="statusLabel" class="subBadge muted">Tap adjacent cells</div>
+    </div>
+  </header>
+
+  <main class="main">
+    <div id="grid" class="grid" aria-label="Puzzle grid"></div>
+  </main>
+
+  <footer class="footer">
+    <button id="undoBtn" class="btn">Undo</button>
+    <button id="resetBtn" class="btn">Reset</button>
+    <button id="prevBtn" class="btn">Prev</button>
+    <button id="nextBtn" class="btn primary">Next</button>
+    <button id="stagesBtn" class="btn">Stages</button>
+  </footer>
+
+  <!-- Stages modal -->
+  <div id="modalBackdrop" class="backdrop hidden" role="dialog" aria-modal="true">
+    <div class="modal">
+      <div class="modalHeader">
+        <div class="modalTitle">Stages</div>
+        <button id="closeModalBtn" class="btn small">Close</button>
+      </div>
+      <div id="stageList" class="stageList"></div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+  <script type="module" src="./app.js"></script>
+</body>
+</html>
